@@ -53,7 +53,7 @@ app.get('/weather', (req, res) => {
         )
     }
 
-    geocoding(req.query.address, (error, {latitude, longitude} = {}) => {
+    geocoding(req.query.address, (error, {latitude, longitude, location} = {}) => {
         if (error) {
             return res.send({
                     error: error
@@ -69,8 +69,8 @@ app.get('/weather', (req, res) => {
                 )
             }
             res.send({
+                location: location,
                 forecastData,
-                address: req.query.address,
             })
         })
     })

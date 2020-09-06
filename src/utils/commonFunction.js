@@ -9,8 +9,7 @@ const forecast = (lattitide, longitude, callback) => {
         } else if (body.error) {
             callback('Unable to find location', undefined);
         } else {
-            let data = body.currently.summary
-            callback(undefined, data)
+            callback(undefined, body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degress out. This high today is ' + body.daily.data[0].temperatureHigh + ' with a low of ' + body.daily.data[0].temperatureLow + '. There is a ' + body.currently.precipProbability + '% chance of rain.')
         }
     })
 }
@@ -29,7 +28,7 @@ const geocoding = (address, callback) => {
             callback(undefined, {
                 latitude: data[1],
                 longitude: data[0],
-                location: data.place_name
+                location: body.features[0].place_name
             })
         }
 
