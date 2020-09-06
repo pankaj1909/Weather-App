@@ -23,24 +23,24 @@ app.get('', (req, res) => {
     res.render('index', {
         forcast: 'forecast',
         locations: 'Berlin',
-        title: 'Main Page',
-        name: 'ABC'
+        title: 'Weather App',
+        name: 'Pankaj'
     })
 })
 
 app.get('/about', (req, res) => {
     res.render('about', {
-        text: 'weather forcast',
-        title: 'about Page',
-        name: 'ABC'
+        text: 'Weather forcast',
+        title: 'About Page',
+        name: 'Pankaj'
     })
 })
 
 app.get('/help', (req, res) => {
     res.render('help', {
-        helpText: 'helpText render',
-        title: 'help Page',
-        name: 'ABC'
+        helpText: 'HelpText',
+        title: 'Help Page',
+        name: 'Pankaj'
     })
 })
 
@@ -80,7 +80,7 @@ app.get('/help/*', (req, res) => {
     res.render('404', {
         errorMsg: 'Error  404 Not Found',
         title: 'Error Page',
-        name: 'ABC'
+        name: 'Pankaj'
     })
 })
 
@@ -88,7 +88,7 @@ app.get('*', (req, res) => {
     res.render('404', {
         errorMsg: 'Error  404 Not Found',
         title: 'Error Page',
-        name: 'ABC'
+        name: 'Pankaj'
     })
 })
 
