@@ -93,5 +93,5 @@ app.get('*', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log('Serve is up nd running' + port);
+    console.log('Serve is up nd running:- ' + port);
 })

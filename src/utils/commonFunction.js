@@ -18,7 +18,6 @@ const geocoding = (address, callback) => {
     const geoUrl = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + encodeURIComponent(address) + '.json?access_token=pk.eyJ1IjoicGFua2FqMDkiLCJhIjoiY2s3bjJwdmpsMDA4ODNucHJpdWE3OG0wdSJ9.GCBw_ncZPbijkJQf4cP9EQ&limit=1'
 
     request({url: geoUrl, json: true}, (error, {body}) => {
-        console.log(body)
         if (error) {
             callback('Unable to connect to geoCode service !', undefined);
         } else if (body.features.length === 0) {
